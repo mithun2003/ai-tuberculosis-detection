@@ -1,3 +1,4 @@
 env
 train
-tb_cnn_model.h5
+backend/tb_cnn_model.h5
+*.h5

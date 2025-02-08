@@ -7,6 +7,8 @@ import cv2
 from fastapi.middleware.cors import CORSMiddleware
 import gdown
 import os
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 file_id = "1QyQp-Ez9xKEcl1-b_Ewmt4wdAJkekOtc"
 # Path where the model file should be saved
@@ -43,10 +45,25 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-def home():
-    return {"message": "TB Detection API is running!"}
+frontend_dir = os.path.join(os.path.dirname(__file__), "..", "frontend")
 
+# Serve frontend static files (HTML, CSS, JS) from the "frontend" directory
+app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+
+# Main route to serve the index.html
+@app.get("/")
+def read_root():
+    return FileResponse(os.path.join(frontend_dir, "index.html"))
+
+# Serve styles.css at the /styles.css path
+@app.get("/styles.css")
+def read_styles():
+    return FileResponse(os.path.join(frontend_dir, "styles.css"))
+
+# Serve script.js at the /script.js path
+@app.get("/script.js")
+def read_script():
+    return FileResponse(os.path.join(frontend_dir, "script.js"))
 
 # Function to validate if image is a chest X-ray
 def is_xray_image(image: np.array) -> bool:
