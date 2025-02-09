@@ -29,12 +29,14 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
+.preview_class{
+    display: flex;
+    justify-self: center;
+}
 #preview {
     margin-top: 20px;
     width: 200px;
     display: none;
     border: 2px solid #ddd;
     border-radius: 10px;
-    width: 100%;
 }
