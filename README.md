@@ -1,13 +1,22 @@
-# AI Tuberculosis Detection
+<h1 align="center">
+AI Tuberculosis Detection
+</h1>
 
 AI-powered web application for detecting tuberculosis (TB) from chest X-ray images using a deep learning model. The backend is built with **FastAPI**, and the frontend is developed with **HTML, CSS, and JavaScript**.
 
 ---
 
-## 🖼 Project Overview
+## 🖼 **Project Overview**
 
+AI Tuberculosis Detection uses machine learning to detect tuberculosis from chest X-ray images. The model is hosted via a FastAPI backend, and the frontend allows users to upload X-ray images and receive real-time predictions.
 
-*Replace **`assets/demo-image.png`** with an actual image path showing the working of the project.*
+**Key Highlights:**
+- FastAPI-powered backend for quick image processing.
+- User-friendly frontend built with HTML, CSS, and JavaScript.
+- Predicts the probability of tuberculosis based on uploaded chest X-rays.
+- Real-time preview of the X-ray image before uploading.
+
+![Sample Image](assets/demo-image.png)
 
 ## 🚀 Features
 
